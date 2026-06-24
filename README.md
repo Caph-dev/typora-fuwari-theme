@@ -38,6 +38,17 @@ Typical Typora theme folder on macOS:
 /Users/{username}/Library/Application Support/abnerworks.Typora/themes/
 ```
 
+## Recommended fonts
+
+The theme works with system fonts out of the box. Install the following fonts locally for the best experience:
+
+| Role | Font | Link |
+| --- | --- | --- |
+| Body text | Roboto | <https://fonts.google.com/specimen/Roboto> |
+| Body text (alternative) | Inter | <https://rsms.me/inter/> |
+| Code | Maple Mono Normal NF CN | <https://github.com/subframe7536/maple-font> |
+| Code (alternative) | JetBrains Mono | <https://www.jetbrains.com/lp/mono/> |
+
 ## Design notes
 
 The CSS is hand-written for Typora instead of copied from Fuwari's Tailwind and Stylus source. It maps the following Fuwari ideas to Typora selectors:
@@ -87,3 +98,7 @@ If you want to fine-tune the theme:
 - Typora custom theme guide: <https://theme.typora.io/doc/Write-Custom-Theme/>
 - Typora theme installation guide: <https://theme.typora.io/doc/Install-Theme/>
 - Typora style documentation: <https://support.typora.io/style/>
+
+---
+
+Learn AI on LinuxDo <https://linux.do/>
