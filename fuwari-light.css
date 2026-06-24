@@ -28,7 +28,7 @@
   --fuwari-titlebar-text: rgba(31, 41, 55, 0.72);
 
   --fuwari-btn-bg: oklch(0.95 0.025 var(--hue));
-  --fuwari-btn-hover: oklch(0.90 0.05 var(--hue));
+  --fuwari-btn-hover: oklch(0.90 0.05 275);
   --fuwari-btn-active: oklch(0.85 0.08 var(--hue));
   --fuwari-panel-bg: rgba(255, 255, 255, 0.82);
   --fuwari-table-head: oklch(0.97 0.015 var(--hue));
@@ -45,37 +45,47 @@
   --fuwari-diagram-note-border: color-mix(in oklch, var(--fuwari-warning) 42%, transparent);
   --fuwari-diagram-note-text: #2f343f;
 
-  --fuwari-inline-code-bg: var(--fuwari-btn-bg);
+  --fuwari-inline-code-bg: #e2f0ff;
   --fuwari-inline-code-color: oklch(0.55 0.12 var(--hue));
-  --fuwari-code-bg: #f7f8fb;
-  --fuwari-code-topbar-bg: #eaedf3;
-  --fuwari-code-text: #2f343f;
-  --fuwari-code-muted: rgba(85, 91, 103, 0.86);
-  --fuwari-code-selection: rgba(64, 120, 242, 0.22);
-  --fuwari-code-border: rgba(31, 35, 40, 0.18);
-  --fuwari-code-topbar-border: rgba(31, 35, 40, 0.14);
-  --fuwari-code-dot: rgba(31, 35, 40, 0.26);
-  --fuwari-code-gutter-line: rgba(31, 35, 40, 0.18);
+  /*
+   * Code Block Palette — "Slate Paper"
+   * A cool, restrained light-theme syntax scheme.
+   * Background reads as fine paper under north-facing light;
+   * token hues are distinct but harmonized within a single cool family.
+   */
+  --fuwari-code-bg: #f6f7fc;
+  --fuwari-code-topbar-bg: #eef0f7;
+  --fuwari-code-text: #1a1e26;
+  --fuwari-code-muted: #586070;
+  --fuwari-code-selection: rgba(92, 82, 196, 0.20);
+  --fuwari-code-border: rgba(26, 30, 38, 0.12);
+  --fuwari-code-topbar-border: rgba(26, 30, 38, 0.08);
+  --fuwari-code-dot: rgba(26, 30, 38, 0.20);
+  --fuwari-code-gutter-line: rgba(26, 30, 38, 0.10);
   --fuwari-code-font-size: 0.93rem;
   --fuwari-code-font-weight: 450;
   --fuwari-code-line-height: 1.72;
-  --fuwari-code-token-keyword: #a626a4;
-  --fuwari-code-token-operator: #0184bc;
-  --fuwari-code-token-constant: #986801;
-  --fuwari-code-token-entity: #255fbd;
-  --fuwari-code-token-variable: #2f343f;
-  --fuwari-code-token-variable-special: #c18401;
-  --fuwari-code-token-string: #22863a;
-  --fuwari-code-token-comment: #6a737d;
-  --fuwari-code-token-tag: #d12f1f;
-  --fuwari-code-token-heading: #255fbd;
-  --fuwari-code-token-error: #ca1243;
-  --fuwari-code-token-matching: #0184bc;
-  --fuwari-code-keyword-weight: 650;
-  --fuwari-code-operator-weight: 560;
+
+  /* ── Syntax tokens ───────────────────────── */
+  --fuwari-code-token-keyword: #5540b8;
+  --fuwari-code-token-operator: #36445e;
+  --fuwari-code-token-constant: #b3500e;
+  --fuwari-code-token-entity: #1f5ca8;
+  --fuwari-code-token-variable: #1a1e26;
+  --fuwari-code-token-variable-special: #4a6090;
+  --fuwari-code-token-string: #0b7870;
+  --fuwari-code-token-comment: #586070;
+  --fuwari-code-token-tag: #7448a0;
+  --fuwari-code-token-heading: #1f5ca8;
+  --fuwari-code-token-error: #b83038;
+  --fuwari-code-token-matching: #4a6090;
+
+  /* ── Token weights ───────────────────────── */
+  --fuwari-code-keyword-weight: 620;
+  --fuwari-code-operator-weight: 520;
   --fuwari-code-constant-weight: 580;
   --fuwari-code-entity-weight: 640;
-  --fuwari-code-tag-weight: 640;
+  --fuwari-code-tag-weight: 620;
   --fuwari-selection-bg: oklch(0.90 0.05 var(--hue));
   --fuwari-link-underline: oklch(0.93 0.04 var(--hue));
   --fuwari-link-hover: oklch(0.95 0.025 var(--hue));

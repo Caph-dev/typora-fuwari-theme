@@ -168,7 +168,7 @@ content,
 
 #write a,
 #write a:not(.md-toc-inner) {
-  color: var(--fuwari-primary-strong);
+  color: oklch(0.45 0.15 250) !important;
   border-radius: 0.35rem;
   font-weight: 600;
   text-decoration-line: underline;
@@ -180,7 +180,7 @@ content,
 }
 
 #write a:hover {
-  color: var(--fuwari-primary-strong);
+  color: oklch(0.45 0.15 250) !important;
   background: var(--fuwari-link-hover);
   text-decoration-color: transparent;
 }
@@ -643,7 +643,7 @@ content,
 }
 
 #write tbody tr:hover td {
-  background: color-mix(in oklch, var(--fuwari-btn-hover) 62%, transparent);
+  background: var(--fuwari-btn-hover);
 }
 
 #write code,
@@ -687,6 +687,14 @@ content,
   background: color-mix(in oklch, var(--fuwari-card-bg) 76%, var(--fuwari-primary) 24%);
   color: var(--fuwari-primary-strong);
   font-weight: 640;
+}
+
+#write table code,
+#write table tt {
+  background: #e2f0ff !important;
+  border: none !important;
+  color: var(--fuwari-primary-strong) !important;
+  font-weight: 480 !important;
 }
 
 #write pre code,
