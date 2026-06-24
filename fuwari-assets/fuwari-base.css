@@ -1,0 +1,1497 @@
+/*
+ * Shared Fuwari Typora styles.
+ * Import this file from the explicit light and dark theme entrypoints.
+ */
+
+html {
+  min-height: 100%;
+  font-size: 16px;
+  background: var(--fuwari-window-bg, var(--bg-color)) !important;
+  color: var(--text-color);
+  font-family: var(--fuwari-font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100%;
+  background: var(--fuwari-window-bg, var(--bg-color)) !important;
+  color: var(--text-color);
+  font-family: var(--fuwari-font-sans);
+}
+
+#typora-content,
+#typora-editor,
+#content,
+content,
+.typora-node,
+.typora-node #typora-content {
+  background: var(--fuwari-window-bg, var(--bg-color)) !important;
+}
+
+#top-titlebar {
+  background: var(--fuwari-titlebar-bg, transparent) !important;
+  color: var(--fuwari-titlebar-text, var(--text-color)) !important;
+}
+
+#title-text,
+#title-text span,
+#top-titlebar .file-info,
+#top-titlebar .file-info span,
+#top-titlebar .toolbar-icon.btn,
+#top-titlebar .toolbar-icon.btn i {
+  color: var(--fuwari-titlebar-text, var(--text-color)) !important;
+  text-shadow: none !important;
+}
+
+::selection {
+  background: var(--fuwari-selection-bg);
+  color: var(--text-color);
+}
+
+#write {
+  box-sizing: border-box;
+  width: min(100%, 860px);
+  max-width: calc(100% - 2rem);
+  min-height: calc(100vh - 3rem);
+  margin: 1.5rem auto 3rem;
+  padding: clamp(2rem, 5vw, 4.25rem);
+  color: var(--text-color);
+  background: var(--fuwari-card-bg);
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-large);
+  box-shadow: var(--fuwari-shadow);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+#write > *:first-child {
+  margin-top: 0;
+}
+
+#write > *:last-child {
+  margin-bottom: 0;
+}
+
+#write p,
+#write blockquote,
+#write ul,
+#write ol,
+#write dl,
+#write table,
+#write pre:not(.CodeMirror-line):not(.CodeMirror-line-like),
+#write .md-fences,
+#write .md-toc,
+#write .mathjax-block,
+#write .md-math-block,
+#write .md-rawblock,
+#write figure {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#write p {
+  color: var(--text-color);
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  position: relative;
+  color: var(--text-color);
+  font-family: var(--fuwari-font-sans);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  scroll-margin-top: 2rem;
+}
+
+#write h1 {
+  margin: 0 0 1.4rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px dashed var(--fuwari-line-strong);
+  font-size: 2.25rem;
+}
+
+#write h2 {
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px dashed var(--fuwari-line);
+  font-size: 1.75rem;
+}
+
+#write h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.45rem;
+}
+
+#write h4 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.65rem;
+  font-size: 1.2rem;
+}
+
+#write h5 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.55rem;
+  color: var(--fuwari-primary-strong);
+  font-size: 1.05rem;
+}
+
+#write h6 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--fuwari-text-muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+#write h2::before,
+#write h3::before,
+#write h4::before {
+  content: "";
+  position: absolute;
+  top: 0.18em;
+  left: -1rem;
+  width: 0.28rem;
+  height: 1em;
+  border-radius: 999px;
+  background: var(--fuwari-primary);
+  opacity: 0.72;
+}
+
+#write a,
+#write a:not(.md-toc-inner) {
+  color: var(--fuwari-primary-strong);
+  border-radius: 0.35rem;
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-color: var(--fuwari-link-underline);
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24rem;
+  transition: color 0.15s ease, background-color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+#write a:hover {
+  color: var(--fuwari-primary-strong);
+  background: var(--fuwari-link-hover);
+  text-decoration-color: transparent;
+}
+
+#write a:active {
+  background: var(--fuwari-link-active);
+}
+
+#write strong {
+  color: var(--text-color);
+  font-weight: 760;
+}
+
+#write em {
+  color: color-mix(in oklch, var(--text-color) 88%, var(--fuwari-primary));
+}
+
+#write mark {
+  padding: 0.1em 0.35em;
+  border-radius: 0.35rem;
+  border: 1px solid var(--fuwari-mark-border, transparent);
+  background: var(--fuwari-mark-bg, color-mix(in oklch, var(--fuwari-warning) 28%, transparent));
+  color: var(--fuwari-mark-color, var(--text-color));
+}
+
+#write kbd {
+  display: inline-block;
+  min-width: 1.45em;
+  padding: 0.12em 0.42em;
+  border: 1px solid var(--fuwari-kbd-border, var(--fuwari-line-strong));
+  border-radius: 0.34rem;
+  background: var(--fuwari-kbd-bg, var(--fuwari-card-bg));
+  box-shadow: var(--fuwari-kbd-shadow, inset 0 -1px 0 var(--fuwari-line));
+  color: var(--fuwari-kbd-text, var(--text-color));
+  font-family: var(--fuwari-font-mono);
+  font-size: 0.86em;
+  line-height: 1.35;
+  text-align: center;
+  vertical-align: 0.08em;
+  white-space: nowrap;
+}
+
+#write del {
+  color: var(--fuwari-text-muted);
+}
+
+#write sup:not(.md-footnote),
+#write sub {
+  color: inherit !important;
+}
+
+#write sup:not(.md-footnote) *,
+#write sub * {
+  color: inherit !important;
+}
+
+#write ul,
+#write ol {
+  padding-left: 1.55rem;
+}
+
+#write li {
+  margin: 0.35rem 0;
+  padding-left: 0.15rem;
+}
+
+#write li::marker {
+  color: var(--fuwari-primary);
+  font-weight: 700;
+}
+
+#write li > p {
+  margin: 0.4rem 0;
+}
+
+#write dl {
+  padding: 0.9rem 1.15rem;
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-medium);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 42%, transparent);
+}
+
+#write dt {
+  margin-top: 0.8rem;
+  color: var(--text-color);
+  font-weight: 740;
+}
+
+#write dt:first-child {
+  margin-top: 0;
+}
+
+#write dd {
+  margin: 0.15rem 0 0.8rem 1.1rem;
+  color: var(--fuwari-text-muted);
+}
+
+#write dd:last-child {
+  margin-bottom: 0;
+}
+
+#write input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.45rem;
+  border: 1px solid var(--fuwari-line-strong);
+  border-radius: 0.28rem;
+  accent-color: var(--fuwari-checkbox-accent, var(--fuwari-primary));
+  transform: translateY(0.15em);
+}
+
+#write .task-list-item {
+  list-style-type: none;
+}
+
+#write .task-list-item input[type="checkbox"] {
+  margin-left: -1.35rem;
+}
+
+#write .task-list-done,
+#write .task-list-item:has(input[type="checkbox"]:checked) {
+  color: var(--fuwari-text-muted);
+}
+
+#write blockquote {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.9rem 1.15rem 0.9rem 1.4rem;
+  border-left: 0;
+  border-radius: var(--radius-medium);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 72%, transparent);
+  color: var(--fuwari-text-muted);
+  font-style: normal;
+}
+
+#write blockquote::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem auto 0.75rem 0.45rem;
+  width: 0.28rem;
+  border-radius: 999px;
+  background: var(--fuwari-primary);
+}
+
+#write blockquote > :first-child {
+  margin-top: 0;
+}
+
+#write blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+#write blockquote p {
+  color: inherit;
+}
+
+#write blockquote.admonition,
+#write blockquote[class*="admonition"],
+#write blockquote[class*="bdm-"],
+#write blockquote.md-alert,
+#write blockquote[class*="md-alert"],
+#write blockquote.markdown-alert,
+#write blockquote[class*="markdown-alert"],
+#write .md-alert,
+#write .markdown-alert {
+  position: relative;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0.9rem 1.15rem 0.9rem 1.4rem !important;
+  border: 0 !important;
+  border-radius: var(--radius-medium) !important;
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 72%, transparent) !important;
+  color: var(--fuwari-text-muted);
+  font-style: normal;
+}
+
+#write .md-alert::before,
+#write .markdown-alert::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem auto 0.75rem 0.45rem;
+  width: 0.28rem;
+  border-radius: 999px;
+  background: var(--fuwari-primary);
+}
+
+#write .bdm-title,
+#write .md-alert-title,
+#write .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 !important;
+  color: var(--fuwari-primary-strong);
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+#write blockquote.md-alert > p,
+#write blockquote.markdown-alert > p,
+#write .md-alert > p,
+#write .markdown-alert > p {
+  margin: 0.45rem 0 0;
+  color: var(--text-color);
+}
+
+#write blockquote.md-alert > p:first-child,
+#write blockquote.markdown-alert > p:first-child,
+#write .md-alert > p:first-child,
+#write .markdown-alert > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.4rem !important;
+  color: var(--fuwari-primary-strong);
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+#write .md-alert-title svg,
+#write .markdown-alert-title svg {
+  flex: 0 0 auto;
+  color: currentColor;
+  fill: currentColor;
+}
+
+#write blockquote.bdm-tip::before,
+#write blockquote.tip::before,
+#write blockquote.md-alert-tip::before,
+#write blockquote.markdown-alert-tip::before,
+#write .md-alert-tip::before,
+#write .markdown-alert-tip::before {
+  background: var(--fuwari-tip);
+}
+
+#write blockquote.bdm-note::before,
+#write blockquote.note::before,
+#write blockquote.md-alert-note::before,
+#write blockquote.markdown-alert-note::before,
+#write .md-alert-note::before,
+#write .markdown-alert-note::before {
+  background: var(--fuwari-note);
+}
+
+#write blockquote.bdm-important::before,
+#write blockquote.important::before,
+#write blockquote.md-alert-important::before,
+#write blockquote.markdown-alert-important::before,
+#write .md-alert-important::before,
+#write .markdown-alert-important::before {
+  background: var(--fuwari-important);
+}
+
+#write blockquote.bdm-warning::before,
+#write blockquote.warning::before,
+#write blockquote.md-alert-warning::before,
+#write blockquote.markdown-alert-warning::before,
+#write .md-alert-warning::before,
+#write .markdown-alert-warning::before {
+  background: var(--fuwari-warning);
+}
+
+#write blockquote.bdm-caution::before,
+#write blockquote.caution::before,
+#write blockquote.md-alert-caution::before,
+#write blockquote.markdown-alert-caution::before,
+#write .md-alert-caution::before,
+#write .markdown-alert-caution::before {
+  background: var(--fuwari-caution);
+}
+
+#write blockquote.bdm-tip .bdm-title,
+#write blockquote.tip .bdm-title,
+#write blockquote.md-alert-tip > p:first-child,
+#write blockquote.markdown-alert-tip > p:first-child,
+#write .md-alert-tip > p:first-child,
+#write .markdown-alert-tip > p:first-child,
+#write .md-alert-tip .md-alert-title,
+#write .markdown-alert-tip .markdown-alert-title {
+  color: var(--fuwari-tip);
+}
+
+#write blockquote.bdm-note .bdm-title,
+#write blockquote.note .bdm-title,
+#write blockquote.md-alert-note > p:first-child,
+#write blockquote.markdown-alert-note > p:first-child,
+#write .md-alert-note > p:first-child,
+#write .markdown-alert-note > p:first-child,
+#write .md-alert-note .md-alert-title,
+#write .markdown-alert-note .markdown-alert-title {
+  color: var(--fuwari-note);
+}
+
+#write blockquote.bdm-important .bdm-title,
+#write blockquote.important .bdm-title,
+#write blockquote.md-alert-important > p:first-child,
+#write blockquote.markdown-alert-important > p:first-child,
+#write .md-alert-important > p:first-child,
+#write .markdown-alert-important > p:first-child,
+#write .md-alert-important .md-alert-title,
+#write .markdown-alert-important .markdown-alert-title {
+  color: var(--fuwari-important);
+}
+
+#write blockquote.bdm-warning .bdm-title,
+#write blockquote.warning .bdm-title,
+#write blockquote.md-alert-warning > p:first-child,
+#write blockquote.markdown-alert-warning > p:first-child,
+#write .md-alert-warning > p:first-child,
+#write .markdown-alert-warning > p:first-child,
+#write .md-alert-warning .md-alert-title,
+#write .markdown-alert-warning .markdown-alert-title {
+  color: var(--fuwari-warning);
+}
+
+#write blockquote.bdm-caution .bdm-title,
+#write blockquote.caution .bdm-title,
+#write blockquote.md-alert-caution > p:first-child,
+#write blockquote.markdown-alert-caution > p:first-child,
+#write .md-alert-caution > p:first-child,
+#write .markdown-alert-caution > p:first-child,
+#write .md-alert-caution .md-alert-title,
+#write .markdown-alert-caution .markdown-alert-title {
+  color: var(--fuwari-caution);
+}
+
+#write .md-rawblock:has(details),
+#write .md-htmlblock:has(details) {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+#write details {
+  display: block;
+  margin: 1rem 0;
+  padding: 0 1rem 1rem;
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-medium);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 48%, transparent);
+  overflow: hidden;
+}
+
+#write summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 -1rem;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  color: var(--text-color);
+  font-weight: 650;
+  line-height: 1.45;
+  list-style: none;
+}
+
+#write summary::-webkit-details-marker {
+  display: none;
+}
+
+#write summary::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 0.14rem solid currentColor;
+  border-bottom: 0.14rem solid currentColor;
+  opacity: 0.72;
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+#write details[open] > summary {
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--fuwari-line);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 64%, transparent);
+}
+
+#write details[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+#write details > :not(summary) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#write details > :last-child {
+  margin-bottom: 0;
+}
+
+#write hr {
+  height: 0;
+  margin: 2.25rem 0;
+  border: 0;
+  border-top: 2px dashed var(--fuwari-line-strong);
+  background: none;
+}
+
+#write img,
+#write video,
+#write iframe {
+  display: block;
+  max-width: 100%;
+  margin: 1.25rem auto;
+  border-radius: var(--radius-medium);
+}
+
+#write img {
+  box-shadow: 0 8px 28px rgba(65, 56, 98, 0.10);
+}
+
+#write figcaption,
+#write .md-image > .md-meta {
+  color: var(--fuwari-text-faint);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#write table {
+  width: 100%;
+  border: 1px solid var(--fuwari-line);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  background: var(--fuwari-card-bg);
+  font-size: 0.96rem;
+}
+
+#write th,
+#write td {
+  padding: 0.75rem 0.9rem;
+  border: 0;
+  border-right: 1px solid var(--fuwari-line);
+  border-bottom: 1px solid var(--fuwari-line);
+  vertical-align: top;
+}
+
+#write th:last-child,
+#write td:last-child {
+  border-right: 0;
+}
+
+#write tr:last-child > td {
+  border-bottom: 0;
+}
+
+#write thead th {
+  background: var(--fuwari-table-head);
+  color: var(--text-color);
+  font-weight: 720;
+}
+
+#write tbody tr:nth-child(even) td {
+  background: var(--fuwari-table-row);
+}
+
+#write tbody tr:hover td {
+  background: color-mix(in oklch, var(--fuwari-btn-hover) 62%, transparent);
+}
+
+#write code,
+#write tt {
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.38rem;
+  background: var(--fuwari-inline-code-bg);
+  color: var(--fuwari-inline-code-color);
+  font-family: var(--fuwari-font-mono);
+  font-size: 0.9em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+#write code::selection,
+#write code *::selection,
+#write tt::selection,
+#write tt *::selection {
+  background: transparent;
+  color: inherit;
+  text-shadow: none;
+}
+
+#write blockquote code,
+#write blockquote tt,
+#write table code,
+#write table tt,
+#write details code,
+#write details tt,
+#write .custom-html-block code,
+#write .custom-html-block tt,
+#write .md-rawblock code,
+#write .md-rawblock tt,
+#write .md-htmlblock code,
+#write .md-htmlblock tt,
+#write .md-alert code,
+#write .md-alert tt,
+#write .markdown-alert code,
+#write .markdown-alert tt {
+  border: 1px solid color-mix(in oklch, var(--fuwari-primary) 34%, transparent);
+  background: color-mix(in oklch, var(--fuwari-card-bg) 76%, var(--fuwari-primary) 24%);
+  color: var(--fuwari-primary-strong);
+  font-weight: 640;
+}
+
+#write pre code,
+#write .md-fences code,
+#write pre tt {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+}
+
+#write blockquote pre code,
+#write blockquote .md-fences code,
+#write blockquote pre tt,
+#write table pre code,
+#write table .md-fences code,
+#write table pre tt,
+#write details pre code,
+#write details .md-fences code,
+#write details pre tt,
+#write .custom-html-block pre code,
+#write .custom-html-block .md-fences code,
+#write .custom-html-block pre tt,
+#write .md-rawblock pre code,
+#write .md-rawblock .md-fences code,
+#write .md-rawblock pre tt,
+#write .md-htmlblock pre code,
+#write .md-htmlblock .md-fences code,
+#write .md-htmlblock pre tt,
+#write .md-alert pre code,
+#write .md-alert .md-fences code,
+#write .md-alert pre tt,
+#write .markdown-alert pre code,
+#write .markdown-alert .md-fences code,
+#write .markdown-alert pre tt {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-weight: inherit;
+}
+
+#write pre:not(.md-meta-block):not(.CodeMirror-line):not(.CodeMirror-line-like),
+#write pre.md-fences,
+#write .md-fences,
+#write .CodeMirror,
+#write .cm-s-inner {
+  border-radius: var(--radius-large);
+  background: var(--fuwari-code-bg) !important;
+  color: var(--fuwari-code-text) !important;
+  font-family: var(--fuwari-font-mono) !important;
+  font-size: var(--fuwari-code-font-size, 0.9rem);
+  font-weight: var(--fuwari-code-font-weight, 400);
+  line-height: var(--fuwari-code-line-height, 1.65);
+}
+
+#write pre:not(.md-meta-block):not(.CodeMirror-line):not(.CodeMirror-line-like),
+#write pre.md-fences,
+#write .md-fences {
+  position: relative;
+  border: 1px solid var(--fuwari-code-border, rgba(255, 255, 255, 0.08));
+  box-shadow: none;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#write pre:not(.md-meta-block):not(.md-fences):not(.CodeMirror-line):not(.CodeMirror-line-like),
+#write pre.md-fences.mock-cm {
+  padding: 3.5rem 1.25rem 1.15rem;
+  overflow: auto;
+}
+
+#write pre.md-fences,
+#write .md-fences {
+  padding: 2.55rem 0 0;
+  background: var(--fuwari-code-bg) !important;
+}
+
+#write .md-fences .CodeMirror,
+#write pre.md-fences .CodeMirror,
+#write .md-fences .cm-s-inner,
+#write pre.md-fences .cm-s-inner {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0.95rem 0 1.15rem !important;
+  border: 0;
+  border-radius: inherit;
+  background: transparent !important;
+  box-shadow: none;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+#write .md-fences:focus-within .CodeMirror,
+#write pre.md-fences:focus-within .CodeMirror,
+#write .md-fences.md-focus .CodeMirror,
+#write pre.md-fences.md-focus .CodeMirror,
+#write .md-fences .CodeMirror-focused,
+#write pre.md-fences .CodeMirror-focused {
+  padding-top: 0.95rem !important;
+  padding-bottom: 1.15rem !important;
+}
+
+#write pre.md-fences::before,
+#write .md-fences::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  height: 2.55rem;
+  border-radius: var(--radius-large) var(--radius-large) 0 0;
+  background:
+    radial-gradient(circle at 1.44rem 1.19rem, var(--fuwari-code-dot, rgba(255, 255, 255, 0.11)) 0 0.29rem, transparent 0.3rem),
+    radial-gradient(circle at 2.29rem 1.19rem, var(--fuwari-code-dot, rgba(255, 255, 255, 0.11)) 0 0.29rem, transparent 0.3rem),
+    radial-gradient(circle at 3.14rem 1.19rem, var(--fuwari-code-dot, rgba(255, 255, 255, 0.11)) 0 0.29rem, transparent 0.3rem),
+    linear-gradient(var(--fuwari-code-topbar-bg), var(--fuwari-code-topbar-bg));
+  border-bottom: 1px solid var(--fuwari-code-topbar-border, rgba(255, 255, 255, 0.04));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+#write pre.md-fences::after,
+#write .md-fences::after {
+  content: attr(lang);
+  position: absolute;
+  top: 0.72rem;
+  left: 4.2rem;
+  z-index: 11;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: calc(100% - 5.3rem);
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: var(--fuwari-code-muted);
+  font-family: var(--fuwari-font-mono);
+  font-size: 0.88rem;
+  font-weight: 720;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+#write pre.md-fences:not([lang])::after,
+#write .md-fences:not([lang])::after,
+#write pre.md-fences[lang=""]::after,
+#write .md-fences[lang=""]::after {
+  content: none;
+  display: none;
+}
+
+#write pre.md-fences:has(.md-diagram-panel),
+#write .md-fences:has(.md-diagram-panel),
+#write pre.md-fences:has(.md-fences-adv-panel),
+#write .md-fences:has(.md-fences-adv-panel),
+#write pre.md-fences:has(.mermaid),
+#write .md-fences:has(.mermaid) {
+  padding: 0 !important;
+  background: var(--fuwari-diagram-bg, color-mix(in oklch, var(--fuwari-btn-bg) 30%, var(--fuwari-card-bg))) !important;
+  overflow: auto;
+}
+
+#write pre.md-fences:has(.md-diagram-panel)::before,
+#write .md-fences:has(.md-diagram-panel)::before,
+#write pre.md-fences:has(.md-fences-adv-panel)::before,
+#write .md-fences:has(.md-fences-adv-panel)::before,
+#write pre.md-fences:has(.mermaid)::before,
+#write .md-fences:has(.mermaid)::before,
+#write pre.md-fences:has(.md-diagram-panel)::after,
+#write .md-fences:has(.md-diagram-panel)::after,
+#write pre.md-fences:has(.md-fences-adv-panel)::after,
+#write .md-fences:has(.md-fences-adv-panel)::after,
+#write pre.md-fences:has(.mermaid)::after,
+#write .md-fences:has(.mermaid)::after {
+  content: none;
+  display: none;
+}
+
+#write .md-fences .md-diagram-panel,
+#write pre.md-fences .md-diagram-panel,
+#write .md-fences .md-fences-adv-panel,
+#write pre.md-fences .md-fences-adv-panel {
+  position: relative;
+  z-index: 1;
+  margin: 0 !important;
+  padding: 1.25rem !important;
+  border-radius: inherit;
+  background: transparent !important;
+  overflow: auto;
+}
+
+#write .md-fences .md-diagram-panel svg,
+#write pre.md-fences .md-diagram-panel svg,
+#write .md-fences .md-fences-adv-panel svg,
+#write pre.md-fences .md-fences-adv-panel svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color: var(--fuwari-diagram-text, var(--text-color)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(text, tspan),
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg foreignObject,
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg foreignObject * {
+  color: var(--fuwari-diagram-text, var(--text-color)) !important;
+  fill: var(--fuwari-diagram-text, var(--text-color)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(.nodeLabel, .edgeLabel, .cluster-label, .labelText, .messageText, .loopText, .titleText) {
+  color: var(--fuwari-diagram-text, var(--text-color)) !important;
+  fill: var(--fuwari-diagram-text, var(--text-color)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg .node :is(rect, circle, ellipse, polygon, path),
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(rect.actor, .actorBox, .activation0, .activation1, .activation2) {
+  fill: var(--fuwari-diagram-node-bg, var(--fuwari-card-bg)) !important;
+  stroke: var(--fuwari-diagram-node-border, var(--fuwari-line-strong)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(.edgePath .path, .flowchart-link, .messageLine0, .messageLine1, .actor-line, .loopLine, .relationshipLine, line) {
+  stroke: var(--fuwari-diagram-line, var(--fuwari-text-muted)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg marker :is(path, polygon) {
+  fill: var(--fuwari-diagram-line, var(--fuwari-text-muted)) !important;
+  stroke: var(--fuwari-diagram-line, var(--fuwari-text-muted)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(.labelBkg, .labelBox) {
+  background-color: var(--fuwari-diagram-label-bg, var(--fuwari-card-bg)) !important;
+  fill: var(--fuwari-diagram-label-bg, var(--fuwari-card-bg)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg .cluster rect {
+  fill: var(--fuwari-diagram-cluster-bg, transparent) !important;
+  stroke: var(--fuwari-diagram-node-border, var(--fuwari-line-strong)) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(rect.note, .noteBox, .note) {
+  fill: var(--fuwari-diagram-note-bg, var(--fuwari-diagram-node-bg, var(--fuwari-card-bg))) !important;
+  stroke: var(--fuwari-diagram-note-border, var(--fuwari-diagram-node-border, var(--fuwari-line-strong))) !important;
+}
+
+#write .md-fences :is(.md-diagram-panel, .md-fences-adv-panel) svg :is(.noteText, .noteText tspan) {
+  color: var(--fuwari-diagram-note-text, var(--fuwari-diagram-text, var(--text-color))) !important;
+  fill: var(--fuwari-diagram-note-text, var(--fuwari-diagram-text, var(--text-color))) !important;
+}
+
+#write .md-fences .code-tooltip,
+#write .md-fences .ty-cm-lang-input,
+#write .md-fences .md-diagram-panel,
+#write .md-fences .md-fences-adv-panel {
+  color: var(--fuwari-code-muted);
+}
+
+#write .CodeMirror-selected,
+#write .CodeMirror-selectedtext,
+#write pre ::selection,
+#write .md-fences ::selection {
+  background: var(--fuwari-code-selection) !important;
+}
+
+#write .CodeMirror-scroll,
+#write .cm-s-inner .CodeMirror-scroll,
+#write .CodeMirror-sizer,
+#write .cm-s-inner .CodeMirror-sizer,
+#write .CodeMirror-lines,
+#write .cm-s-inner .CodeMirror-lines,
+#write .CodeMirror-code,
+#write .cm-s-inner .CodeMirror-code {
+  padding: 0;
+  background: transparent !important;
+}
+
+#write .CodeMirror pre,
+#write .CodeMirror-code pre,
+#write pre.CodeMirror-line,
+#write pre.CodeMirror-line-like {
+  position: static;
+  margin: 0 !important;
+  padding: 0 1.25rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit;
+  overflow: visible !important;
+  line-height: var(--fuwari-code-line-height, 1.65);
+}
+
+#write .CodeMirror-gutter-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-inner.cm-keyword {
+  color: var(--fuwari-code-token-keyword, #ff7b72) !important;
+  font-weight: var(--fuwari-code-keyword-weight, 600);
+}
+
+.cm-s-inner .cm-operator,
+.cm-s-inner.cm-operator {
+  color: var(--fuwari-code-token-operator, var(--fuwari-code-token-keyword, #ff7b72)) !important;
+  font-weight: var(--fuwari-code-operator-weight, 500);
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom,
+.cm-s-inner .cm-number,
+.cm-s-inner.cm-number,
+.cm-s-inner .cm-constant,
+.cm-s-inner.cm-constant {
+  color: var(--fuwari-code-token-constant, #79c0ff) !important;
+  font-weight: var(--fuwari-code-constant-weight, inherit);
+}
+
+.cm-s-inner .cm-builtin,
+.cm-s-inner.cm-builtin,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-def,
+.cm-s-inner .cm-defined,
+.cm-s-inner.cm-defined,
+.cm-s-inner .cm-attribute,
+.cm-s-inner.cm-attribute,
+.cm-s-inner .cm-qualifier,
+.cm-s-inner.cm-qualifier {
+  color: var(--fuwari-code-token-entity, #d2a8ff) !important;
+  font-weight: var(--fuwari-code-entity-weight, inherit);
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner.cm-variable,
+.cm-s-inner .cm-bracket,
+.cm-s-inner.cm-bracket {
+  color: var(--fuwari-code-token-variable, #c9d1d9) !important;
+}
+
+.cm-s-inner .cm-variable-2,
+.cm-s-inner.cm-variable-2,
+.cm-s-inner .cm-variable-3,
+.cm-s-inner.cm-variable-3 {
+  color: var(--fuwari-code-token-variable-special, #ffa657) !important;
+}
+
+.cm-s-inner .cm-string,
+.cm-s-inner.cm-string,
+.cm-s-inner .cm-string-2,
+.cm-s-inner.cm-string-2,
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link,
+.cm-s-inner .cm-url,
+.cm-s-inner.cm-url {
+  color: var(--fuwari-code-token-string, #a5d6ff) !important;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment,
+.cm-s-inner .cm-meta,
+.cm-s-inner.cm-meta,
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote,
+.cm-s-inner .cm-hr,
+.cm-s-inner.cm-hr {
+  color: var(--fuwari-code-token-comment, #8b949e) !important;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+  font-style: italic;
+}
+
+.cm-s-inner .cm-tag,
+.cm-s-inner.cm-tag,
+.cm-s-inner .cm-property,
+.cm-s-inner.cm-property,
+.cm-s-inner .cm-positive,
+.cm-s-inner.cm-positive {
+  color: var(--fuwari-code-token-tag, #7ee787) !important;
+  font-weight: var(--fuwari-code-tag-weight, inherit);
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner.cm-header {
+  color: var(--fuwari-code-token-heading, #79c0ff) !important;
+  font-weight: 700;
+}
+
+.cm-s-inner .cm-strong,
+.cm-s-inner.cm-strong {
+  color: var(--fuwari-code-token-variable, var(--fuwari-code-text)) !important;
+  font-weight: 700;
+}
+
+.cm-s-inner .cm-em,
+.cm-s-inner.cm-em {
+  color: var(--fuwari-code-token-variable, var(--fuwari-code-text)) !important;
+  font-style: italic;
+}
+
+.cm-s-inner .cm-negative,
+.cm-s-inner.cm-negative,
+.cm-s-inner .cm-error,
+.cm-s-inner.cm-error,
+.cm-s-inner .cm-invalidchar,
+.cm-s-inner.cm-invalidchar {
+  color: var(--fuwari-code-token-error, #f85149) !important;
+}
+
+.cm-s-inner .cm-error,
+.cm-s-inner.cm-error,
+.cm-s-inner .cm-invalidchar,
+.cm-s-inner.cm-invalidchar {
+  text-decoration: underline wavy var(--fuwari-code-token-error, #f85149);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  color: var(--fuwari-code-token-matching, #7ee787) !important;
+  text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-nonmatchingbracket {
+  color: var(--fuwari-code-token-error, #f85149) !important;
+}
+
+.CodeMirror-cursor,
+.cm-s-inner .CodeMirror-cursor {
+  border-left: 1px solid var(--fuwari-code-text) !important;
+}
+
+#write .CodeMirror-gutters,
+#write .cm-s-inner .CodeMirror-gutters {
+  border-right: 1px solid var(--fuwari-code-gutter-line, rgba(255, 255, 255, 0.08)) !important;
+  background: var(--fuwari-code-bg) !important;
+}
+
+#write .CodeMirror-gutter,
+#write .cm-s-inner .CodeMirror-gutter,
+#write .CodeMirror-linenumbers,
+#write .cm-s-inner .CodeMirror-linenumbers,
+#write .CodeMirror-gutter-wrapper,
+#write .cm-s-inner .CodeMirror-gutter-wrapper,
+#write .CodeMirror-linenumber,
+#write .cm-s-inner .CodeMirror-linenumber {
+  background: transparent !important;
+}
+
+#write .CodeMirror-linenumber,
+#write .cm-s-inner .CodeMirror-linenumber {
+  color: var(--fuwari-code-muted) !important;
+}
+
+#write .md-toc {
+  max-height: min(24rem, 58vh);
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-medium);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 52%, transparent);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  overflow: auto;
+}
+
+#write .md-toc-content {
+  margin: 0;
+  padding: 0;
+}
+
+#write .md-toc-inner {
+  display: block;
+  margin: 0.08rem 0;
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.45rem;
+  color: var(--fuwari-text-muted);
+  line-height: 1.45;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#write .md-toc-inner:hover {
+  background: var(--fuwari-btn-hover);
+  color: var(--fuwari-primary-strong);
+}
+
+#write .md-toc-h1 .md-toc-inner {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+#write .md-toc-h2 .md-toc-inner {
+  margin-left: 0.85rem;
+}
+
+#write .md-toc-h3 .md-toc-inner {
+  margin-left: 1.7rem;
+  font-size: 0.95rem;
+}
+
+#write .md-toc-h4 .md-toc-inner {
+  margin-left: 2.55rem;
+  font-size: 0.92rem;
+}
+
+#write .md-toc-h5 .md-toc-inner,
+#write .md-toc-h6 .md-toc-inner {
+  margin-left: 3.25rem;
+  font-size: 0.9rem;
+}
+
+#write .footnotes,
+#write .footnotes-area,
+#write .md-def-footnote {
+  color: var(--fuwari-text-muted);
+  font-size: 0.92rem;
+}
+
+#write sup.md-footnote,
+#write .md-footnote {
+  color: var(--fuwari-primary);
+}
+
+#write .md-def-name,
+#write .md-footnote .md-meta {
+  color: var(--fuwari-primary-strong);
+}
+
+#write .mathjax-block,
+#write .md-math-block,
+#write .md-rawblock {
+  padding: 1rem;
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-medium);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 55%, transparent);
+  overflow-x: auto;
+}
+
+#write .md-htmlblock,
+#write .md-rawblock-container {
+  border-radius: var(--radius-medium);
+}
+
+#write pre.md-meta-block,
+#write .md-meta-block {
+  padding: 1rem 1.2rem;
+  border: 1px dashed var(--fuwari-line-strong);
+  border-radius: var(--radius-medium);
+  background: color-mix(in oklch, var(--fuwari-btn-bg) 54%, transparent);
+  color: var(--fuwari-text-muted);
+  font-family: var(--fuwari-font-mono);
+  font-size: 0.9rem;
+}
+
+.md-meta,
+.md-before,
+.md-after,
+.md-url,
+.md-link,
+.md-image,
+.md-pair-s,
+.md-br,
+.md-emoji,
+.md-inline-math script,
+.md-inline-math .md-meta {
+  color: var(--md-char-color) !important;
+}
+
+.md-link-title,
+.md-link-href,
+.md-image-title,
+.md-image-href,
+.md-reference-link,
+.md-reference-link-string {
+  color: var(--meta-content-color) !important;
+}
+
+.md-comment,
+.md-html-inline,
+.md-rawblock-control {
+  color: var(--fuwari-text-faint) !important;
+}
+
+.md-heading .md-meta,
+.md-header-anchor,
+.md-toc-h1 .md-toc-hash,
+.md-toc-h2 .md-toc-hash,
+.md-toc-h3 .md-toc-hash {
+  color: var(--fuwari-primary) !important;
+}
+
+.typora-sourceview-on #write,
+#typora-source {
+  background: var(--fuwari-card-bg);
+  color: var(--text-color);
+  font-family: var(--fuwari-font-mono);
+}
+
+#typora-source .CodeMirror-lines {
+  padding: 2rem 0;
+}
+
+#typora-source .CodeMirror-line {
+  color: var(--text-color);
+}
+
+#typora-source .cm-header {
+  color: var(--fuwari-primary-strong) !important;
+  font-weight: 750;
+}
+
+#typora-source .cm-quote {
+  color: var(--fuwari-text-muted) !important;
+}
+
+#typora-source .cm-link,
+#typora-source .cm-url {
+  color: var(--fuwari-primary) !important;
+}
+
+#typora-source .cm-comment {
+  color: var(--fuwari-text-faint) !important;
+}
+
+#typora-sidebar,
+.sidebar,
+.sidebar-content,
+.file-library-node,
+.file-library-node:not(.file-node-root):focus,
+.outline-content,
+.pin-outline #outline-content {
+  background: var(--side-bar-bg-color);
+  color: var(--text-color);
+}
+
+#typora-sidebar {
+  border-right: 1px solid var(--fuwari-line);
+}
+
+.sidebar-tabs,
+.sidebar-footer,
+.file-tree-node,
+.file-node-content,
+.outline-item,
+.outline-label {
+  color: var(--fuwari-text-muted);
+}
+
+.file-node-content:hover,
+.outline-item:hover,
+.sidebar-tab:hover,
+.ty-sidebar-search-panel .searchpanel-search-option-btn:hover {
+  background: var(--item-hover-bg-color);
+  color: var(--item-hover-text-color);
+}
+
+.file-node-content.active,
+.file-node-content.active:hover,
+.outline-item.active,
+.outline-item.active:hover,
+.sidebar-tab.active {
+  background: var(--active-file-bg-color);
+  color: var(--active-file-text-color);
+  border-color: var(--active-file-border-color);
+}
+
+.file-node-title-name-part,
+.file-node-title-ext-part,
+.outline-label {
+  font-family: var(--fuwari-font-sans);
+}
+
+.megamenu-menu,
+.megamenu-content,
+.modal-content,
+.context-menu,
+.dropdown-menu,
+.ty-preferences,
+.ty-preferences .window-content {
+  background: var(--fuwari-card-bg);
+  color: var(--text-color);
+}
+
+.menu-item-container a.menu-style-btn,
+.context-menu .menu-item,
+.dropdown-menu .menu-item,
+.ty-preferences .nav-group-item {
+  color: var(--fuwari-text-muted);
+}
+
+.menu-item-container a.menu-style-btn:hover,
+.context-menu .menu-item:hover,
+.dropdown-menu .menu-item:hover,
+.ty-preferences .nav-group-item:hover,
+.ty-preferences .nav-group-item.active {
+  background: var(--fuwari-btn-hover);
+  color: var(--fuwari-primary-strong);
+}
+
+input,
+textarea,
+select,
+.form-control,
+.searchpanel-search-input {
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-small);
+  background: color-mix(in oklch, var(--fuwari-card-bg) 88%, var(--fuwari-btn-bg));
+  color: var(--text-color);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus,
+.searchpanel-search-input:focus {
+  border-color: var(--fuwari-primary);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--fuwari-primary) 20%, transparent);
+  outline: none;
+}
+
+.btn,
+button {
+  border-radius: var(--radius-small);
+}
+
+.btn-primary,
+.primary-btn {
+  border-color: var(--primary-btn-border-color);
+  background: var(--primary-color);
+  color: var(--primary-btn-text-color);
+}
+
+.md-notification,
+.notification,
+.ty-alert {
+  border: 1px solid var(--fuwari-line);
+  border-radius: var(--radius-medium);
+  background: var(--fuwari-panel-bg);
+  color: var(--text-color);
+  box-shadow: var(--fuwari-shadow);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 2rem;
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--fuwari-text-muted) 50%, transparent);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--fuwari-text-muted) 68%, transparent);
+  background-clip: content-box;
+}
+
+@media print {
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --fuwari-page-bg: #ffffff;
+    --fuwari-card-bg: #ffffff;
+    --fuwari-text: #111111;
+    --fuwari-text-muted: #555555;
+    --fuwari-line: #dddddd;
+    --fuwari-shadow: none;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  #write {
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #write a {
+    color: #111111;
+    text-decoration-color: #777777;
+  }
+
+  #write pre,
+  #write .md-fences {
+    white-space: pre-wrap;
+  }
+}

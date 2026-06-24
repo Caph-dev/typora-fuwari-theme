@@ -1,0 +1,99 @@
+/*
+ * Fuwari Dark Typora Theme
+ * A fixed dark-mode CSS adaptation inspired by https://github.com/saicaca/fuwari.
+ */
+
+@import url("fuwari-assets/fuwari-base.css");
+
+:root {
+  color-scheme: dark;
+
+  --hue: 250;
+  --radius-large: 1rem;
+  --radius-medium: 0.75rem;
+  --radius-small: 0.5rem;
+
+  --fuwari-page-bg: oklch(0.16 0.014 var(--hue));
+  --fuwari-card-bg: oklch(0.23 0.015 var(--hue));
+  --fuwari-text: rgba(255, 255, 255, 0.88);
+  --fuwari-text-muted: rgba(255, 255, 255, 0.62);
+  --fuwari-text-faint: rgba(255, 255, 255, 0.34);
+  --fuwari-primary: oklch(0.75 0.14 var(--hue));
+  --fuwari-primary-strong: oklch(0.80 0.12 var(--hue));
+  --fuwari-line: rgba(255, 255, 255, 0.10);
+  --fuwari-line-strong: rgba(255, 255, 255, 0.18);
+  --fuwari-shadow: none;
+  --fuwari-window-bg: #292837;
+  --fuwari-titlebar-bg: rgba(41, 40, 55, 0.92);
+  --fuwari-titlebar-text: rgba(255, 255, 255, 0.72);
+
+  --fuwari-btn-bg: oklch(0.33 0.035 var(--hue));
+  --fuwari-btn-hover: oklch(0.38 0.04 var(--hue));
+  --fuwari-btn-active: oklch(0.43 0.045 var(--hue));
+  --fuwari-panel-bg: rgba(42, 41, 57, 0.78);
+  --fuwari-table-head: oklch(0.28 0.02 var(--hue));
+  --fuwari-table-row: oklch(0.25 0.018 var(--hue));
+
+  --fuwari-diagram-bg: #0b111c;
+  --fuwari-diagram-text: rgba(255, 255, 255, 0.88);
+  --fuwari-diagram-line: rgba(203, 213, 225, 0.68);
+  --fuwari-diagram-node-bg: #182234;
+  --fuwari-diagram-node-border: rgba(148, 163, 184, 0.72);
+  --fuwari-diagram-label-bg: rgba(11, 17, 28, 0.86);
+  --fuwari-diagram-cluster-bg: rgba(148, 163, 184, 0.08);
+  --fuwari-diagram-note-bg: rgba(120, 67, 21, 0.52);
+  --fuwari-diagram-note-border: rgba(251, 191, 36, 0.60);
+  --fuwari-diagram-note-text: #fde68a;
+
+  --fuwari-inline-code-bg: var(--fuwari-btn-bg);
+  --fuwari-inline-code-color: oklch(0.75 0.10 var(--hue));
+  --fuwari-code-bg: #080d15;
+  --fuwari-code-topbar-bg: rgb(39, 47, 55);
+  --fuwari-code-text: #c9d1d9;
+  --fuwari-code-muted: #8b949e;
+  --fuwari-code-selection: oklch(0.40 0.08 var(--hue));
+  --fuwari-code-border: rgba(255, 255, 255, 0.08);
+  --fuwari-code-topbar-border: rgba(255, 255, 255, 0.04);
+  --fuwari-code-dot: rgba(255, 255, 255, 0.11);
+  --fuwari-code-gutter-line: rgba(255, 255, 255, 0.08);
+  --fuwari-code-token-keyword: #ff7b72;
+  --fuwari-code-token-constant: #79c0ff;
+  --fuwari-code-token-entity: #d2a8ff;
+  --fuwari-code-token-variable: #c9d1d9;
+  --fuwari-code-token-variable-special: #ffa657;
+  --fuwari-code-token-string: #a5d6ff;
+  --fuwari-code-token-comment: #8b949e;
+  --fuwari-code-token-tag: #7ee787;
+  --fuwari-code-token-heading: #79c0ff;
+  --fuwari-code-token-error: #f85149;
+  --fuwari-code-token-matching: #7ee787;
+  --fuwari-selection-bg: oklch(0.40 0.08 var(--hue));
+  --fuwari-link-underline: oklch(0.40 0.08 var(--hue));
+  --fuwari-link-hover: oklch(0.40 0.08 var(--hue));
+  --fuwari-link-active: oklch(0.35 0.07 var(--hue));
+
+  --fuwari-tip: oklch(0.75 0.14 180);
+  --fuwari-note: oklch(0.75 0.14 250);
+  --fuwari-important: oklch(0.75 0.14 310);
+  --fuwari-warning: oklch(0.75 0.14 60);
+  --fuwari-caution: oklch(0.65 0.20 25);
+
+  --fuwari-font-sans: "Roboto", "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --fuwari-font-mono: "Maple Mono Normal NF CN", "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --bg-color: var(--fuwari-page-bg);
+  --text-color: var(--fuwari-text);
+  --md-char-color: var(--fuwari-text-faint);
+  --meta-content-color: var(--fuwari-text-muted);
+  --primary-color: var(--fuwari-primary);
+  --primary-btn-border-color: var(--fuwari-primary-strong);
+  --primary-btn-text-color: oklch(0.16 0.014 var(--hue));
+  --window-border: 1px solid var(--fuwari-line);
+  --active-file-bg-color: var(--fuwari-btn-bg);
+  --active-file-text-color: var(--fuwari-primary-strong);
+  --active-file-border-color: var(--fuwari-primary);
+  --side-bar-bg-color: oklch(0.19 0.015 var(--hue));
+  --item-hover-bg-color: var(--fuwari-btn-hover);
+  --item-hover-text-color: var(--fuwari-primary-strong);
+  --monospace: var(--fuwari-font-mono);
+}
