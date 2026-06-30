@@ -380,6 +380,14 @@ content,
   line-height: 1.4;
 }
 
+#write .md-alert-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
 #write blockquote.md-alert > p,
 #write blockquote.markdown-alert > p,
 #write .md-alert > p,
@@ -392,15 +400,10 @@ content,
 #write blockquote.markdown-alert > p:first-child,
 #write .md-alert > p:first-child,
 #write .markdown-alert > p:first-child {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
   margin: 0 0 0.4rem !important;
-  color: var(--fuwari-primary-strong);
-  font-weight: 750;
-  line-height: 1.4;
 }
 
+#write .md-alert-text svg,
 #write .md-alert-title svg,
 #write .markdown-alert-title svg {
   flex: 0 0 auto;
@@ -455,56 +458,56 @@ content,
 
 #write blockquote.bdm-tip .bdm-title,
 #write blockquote.tip .bdm-title,
-#write blockquote.md-alert-tip > p:first-child,
-#write blockquote.markdown-alert-tip > p:first-child,
-#write .md-alert-tip > p:first-child,
-#write .markdown-alert-tip > p:first-child,
+#write blockquote.md-alert-tip .md-alert-text,
+#write blockquote.markdown-alert-tip .md-alert-text,
+#write .md-alert-tip .md-alert-text,
+#write .markdown-alert-tip .md-alert-text,
 #write .md-alert-tip .md-alert-title,
-#write .markdown-alert-tip .markdown-alert-title {
+#write .markdown-alert-tip .md-alert-title {
   color: var(--fuwari-tip);
 }
 
 #write blockquote.bdm-note .bdm-title,
 #write blockquote.note .bdm-title,
-#write blockquote.md-alert-note > p:first-child,
-#write blockquote.markdown-alert-note > p:first-child,
-#write .md-alert-note > p:first-child,
-#write .markdown-alert-note > p:first-child,
+#write blockquote.md-alert-note .md-alert-text,
+#write blockquote.markdown-alert-note .md-alert-text,
+#write .md-alert-note .md-alert-text,
+#write .markdown-alert-note .md-alert-text,
 #write .md-alert-note .md-alert-title,
-#write .markdown-alert-note .markdown-alert-title {
+#write .markdown-alert-note .md-alert-title {
   color: var(--fuwari-note);
 }
 
 #write blockquote.bdm-important .bdm-title,
 #write blockquote.important .bdm-title,
-#write blockquote.md-alert-important > p:first-child,
-#write blockquote.markdown-alert-important > p:first-child,
-#write .md-alert-important > p:first-child,
-#write .markdown-alert-important > p:first-child,
+#write blockquote.md-alert-important .md-alert-text,
+#write blockquote.markdown-alert-important .md-alert-text,
+#write .md-alert-important .md-alert-text,
+#write .markdown-alert-important .md-alert-text,
 #write .md-alert-important .md-alert-title,
-#write .markdown-alert-important .markdown-alert-title {
+#write .markdown-alert-important .md-alert-title {
   color: var(--fuwari-important);
 }
 
 #write blockquote.bdm-warning .bdm-title,
 #write blockquote.warning .bdm-title,
-#write blockquote.md-alert-warning > p:first-child,
-#write blockquote.markdown-alert-warning > p:first-child,
-#write .md-alert-warning > p:first-child,
-#write .markdown-alert-warning > p:first-child,
+#write blockquote.md-alert-warning .md-alert-text,
+#write blockquote.markdown-alert-warning .md-alert-text,
+#write .md-alert-warning .md-alert-text,
+#write .markdown-alert-warning .md-alert-text,
 #write .md-alert-warning .md-alert-title,
-#write .markdown-alert-warning .markdown-alert-title {
+#write .markdown-alert-warning .md-alert-title {
   color: var(--fuwari-warning);
 }
 
 #write blockquote.bdm-caution .bdm-title,
 #write blockquote.caution .bdm-title,
-#write blockquote.md-alert-caution > p:first-child,
-#write blockquote.markdown-alert-caution > p:first-child,
-#write .md-alert-caution > p:first-child,
-#write .markdown-alert-caution > p:first-child,
+#write blockquote.md-alert-caution .md-alert-text,
+#write blockquote.markdown-alert-caution .md-alert-text,
+#write .md-alert-caution .md-alert-text,
+#write .markdown-alert-caution .md-alert-text,
 #write .md-alert-caution .md-alert-title,
-#write .markdown-alert-caution .markdown-alert-title {
+#write .markdown-alert-caution .md-alert-title {
   color: var(--fuwari-caution);
 }
 
