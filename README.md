@@ -23,7 +23,7 @@ The theme ports Fuwari's visual language to Typora as plain CSS:
 
 ### From Release (recommended)
 
-1. Download `fuwari-light-v1.0.0.zip` from [Releases](https://github.com/Caph-dev/typora-fuwari-theme/releases/tag/v1.0.0).
+1. Download `fuwari-light-v1.1.0.zip` from [Releases](https://github.com/Caph-dev/typora-fuwari-theme/releases/latest).
 2. Open Typora → `Preferences` → `Appearance` → `Open Theme Folder`.
 3. Extract the zip and copy `fuwari-light.css` and `fuwari-assets/` into the theme folder.
 4. Restart Typora and select `Fuwari Light` from the `Themes` menu.

@@ -23,7 +23,7 @@
 
 ### 从 Release 安装（推荐）
 
-1. 从 [Releases](https://github.com/Caph-dev/typora-fuwari-theme/releases/tag/v1.0.0) 下载 `fuwari-light-v1.0.0.zip`。
+1. 从 [Releases](https://github.com/Caph-dev/typora-fuwari-theme/releases/latest) 下载 `fuwari-light-v1.1.0.zip`。
 2. 打开 Typora → `偏好设置` → `外观` → `打开主题文件夹`。
 3. 解压 zip 文件，将 `fuwari-light.css` 和 `fuwari-assets/` 复制到主题文件夹中。
 4. 重启 Typora，在 `主题` 菜单中选择 `Fuwari Light`。
